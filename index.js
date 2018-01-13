@@ -43,6 +43,12 @@ const menuTemplate = [
         }
       },
       {
+        label: "Clear All Todos",
+        click() {
+          mainWindow.webContents.send("todo:clearAll");
+        }
+      },
+      {
         label: "Quit",
         accelerator: process.platform === "darwin" ? "Command+Q" : "Control+Q",
         click() {
